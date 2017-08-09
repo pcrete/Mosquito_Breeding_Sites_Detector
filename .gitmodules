@@ -1,0 +1,3 @@
+[submodule "caffe-segnet"]
+	path = caffe-segnet
+	url = https://github.com/alexgkendall/caffe-segnet.git
