@@ -4,3 +4,6 @@
 [submodule "SegNet-Tutorial"]
 	path = SegNet-Tutorial
 	url = https://github.com/alexgkendall/SegNet-Tutorial.git
+[submodule "xgboost"]
+	path = xgboost
+	url = https://github.com/dmlc/xgboost.git
