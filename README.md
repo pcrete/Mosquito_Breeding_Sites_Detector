@@ -1,7 +1,6 @@
 # Mosquito Breeding Sites Detector
 
 ## Table of contents
-___
 
 * Installation
 * How it works
@@ -9,7 +8,6 @@ ___
 * Links
 
 ## Getting Started
----
 
 ## Prerequisites
 
@@ -17,7 +15,6 @@ ___
 
 
 # How it works
----
 ## Pipeline of processes
 ![alt text](http://silverpond.com.au/img/blog/pedestrian-detection-details/image03.png "Logo Title Text 1")
 
@@ -72,7 +69,6 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 * output map visualization
 
 # Built With
----
 * [tensorflow](https://www.tensorflow.org/) - image recognition 
 * caffe-segnet - image segmentation
 * google map - visualization script
