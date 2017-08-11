@@ -10,9 +10,11 @@ import overpass
 multipoly = []
 
 def get_polygon(province, district, subdist):
-	with open('../geojson/province/'+province+'.json') as f:
+	with open('../geojson/province/'+province+'.geojson') as f:
 		data = json.load(f)
 	print('Imported '+province+'\'s GeoJSON')
+
+	if(district == "เมือง"): district+=province
 
 	match_feature = []
 	for feature in data['features']:

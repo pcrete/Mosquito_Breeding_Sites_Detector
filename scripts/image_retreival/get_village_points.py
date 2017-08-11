@@ -28,8 +28,7 @@ def get_points(province, district, subdist, village, points, key):
     return vill_points
      
 def get_village_lists(province, district, subdist, village):
-    village_list = [] 
- 
+    village_list = []
     with open('../geojson/village.geojson') as F: 
         villages = json.load(F)
 
