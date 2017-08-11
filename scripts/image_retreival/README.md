@@ -1,2 +1,1 @@
-# Mosquito Breeding Sites Detector
-
+# Image Retreival
