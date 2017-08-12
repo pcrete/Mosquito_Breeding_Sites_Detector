@@ -1,6 +1,6 @@
 # Mosquito Breeding Sites Detector
 
-[![Build Status](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector.svg?branch=master)](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector)
+[![Build Status](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector.svg?branch=master)](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector) [![Gitter chat for developers at https://gitter.im/dmlc/xgboost](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Mosquito_Breeding_Sites_Detector/Lobby)
 
 This project is about detecting Dengue’s vectors breeding site from Google Street View images using deep learning. The main vector is Aedes Egypti mosquito.
 
@@ -17,7 +17,7 @@ This project is about detecting Dengue’s vectors breeding site from Google Str
 * Built With
 
 ## Pipeline of process
-![pipeline](pic/pipeline.png)
+
 
 ## Description of Code
 
@@ -39,7 +39,7 @@ This project is about detecting Dengue’s vectors breeding site from Google Str
   +caffe-segnet @ dba4398
   +xgboost @ 771a95a
   +dataset
-    -Inception model evaluation.ipynb	
+    -Inception model evaluation.ipynb 
     -Training Classifier.ipynb
     -testing.csv
     -train_test.csv
@@ -109,7 +109,7 @@ These instructions is about how you copy this project up and running on your loc
 * [Running](scripts/README.md)
 
 ### Result
-* [Example Result](dataset/README.md)
+* [Example Result](RESULT.md)
 
 ## Built With
 
