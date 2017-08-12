@@ -7,4 +7,4 @@ git:
   submodules: false
 
 script:
-  - python scripts/travis.py
+  - cd scripts; python data_collection.py --province ชัยนาท --district มโนรมย์ --subdist ท่าฉนวน --village บ้านคลองรุน
