@@ -107,7 +107,7 @@ These instructions is about how you copy this project up and running on your loc
 * [Running](scripts/README.md)
 
 ### Result
-* [Example Result](dataset/RESULT.md)
+* [Example Result](dataset/README.md)
 
 ## Built With
 
