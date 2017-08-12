@@ -15,7 +15,7 @@ This project is about detecting Dengue’s vectors breeding site from Google Str
 * Built With
 
 ## Pipeline of process
-![alt text](https://drive.google.com/open?id=0BwfdEKJrhCfQbm5Ua1NYMEJvSXc "Pipeline of process")
+(pic/pipeline.png "Pipeline of process")
 
 ## Description of Code
 
