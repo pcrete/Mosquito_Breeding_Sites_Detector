@@ -15,8 +15,7 @@ This project is about detecting Dengue’s vectors breeding site from Google Str
 * Built With
 
 ## Pipeline of process
-![pipeline]
-(https://github.com/pcrete/Mosquito_Breeding_Sites_Detector/blob/master/pic/pipeline.png)
+![pipeline](pic/pipeline.png)
 
 ## Description of Code
 
