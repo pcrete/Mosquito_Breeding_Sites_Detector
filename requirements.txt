@@ -5,3 +5,4 @@ shapely
 scipy
 tqdm
 overpass
+Pillow
