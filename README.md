@@ -1,6 +1,6 @@
 # Mosquito Breeding Sites Detector
 
-[![Travis CI status][Travis SVG]][Travis]
+[![Build Status](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector.svg?branch=master)](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector)
 
 This project is about detecting Dengue’s vectors breeding site from Google Street View images using deep learning. The main vector is Aedes Egypti mosquito.
 
