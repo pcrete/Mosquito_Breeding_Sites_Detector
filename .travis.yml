@@ -6,5 +6,8 @@ python:
 git:
   submodules: false
 
+install:
+  - pip install -r requirements.txt
+
 script:
   - cd scripts; python data_collection.py --province ชัยนาท --district มโนรมย์ --subdist ท่าฉนวน --village บ้านคลองรุน
