@@ -1,6 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from image_retreival import polygon_to_points
 from image_retreival import get_village_points
 from image_retreival import GSV_loader
+import argparse
 import os
 
 keys = [
@@ -25,16 +29,43 @@ keys = [
         "AIzaSyBiuww1q7s6lIEG4v5yauaeiw-z5YNoN60"
        ]
 
-province = 'ชัยนาท'
-district = 'มโนรมย์'
-subdist = 'ท่าฉนวน'
-village = 'บ้านคลองรุน'
+if __name__ == '__main__':
 
-polygon = polygon_to_points.get_polygon(province, district, subdist)
-points = polygon_to_points.extract_coordinates(polygon)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+      '--province',
+      type=str,
+      help='province/city name (จังหวัด)',
+      required=True
+    )
+    parser.add_argument(
+      '--district',
+      type=str,
+      help='district name (Amphoe อำเภอ)',
+      required=True
+    )
+    parser.add_argument(
+      '--subdist',
+      type=str,
+      help='sub-district name (Tambon, ตำบล)',
+      required=True
+    )
+    parser.add_argument(
+      '--village',
+      type=str,
+      help='village name (หมู่บ้าน)',
+      required=True
+    )
 
-vill_points = get_village_points.get_points(province, district, subdist, village, points, keys[0])
+    FLAGS, unparsed = parser.parse_known_args()
 
-path = os.path.join('../GSV',province, district, subdist, village,'original')
+    province = FLAGS.province.decode('utf8')
+    district = FLAGS.district.decode('utf8') 
+    subdist = FLAGS.subdist.decode('utf8')
+    village = FLAGS.village.decode('utf8')
 
-GSV_loader.load_GSV(vill_points, path, keys)
+    points = polygon_to_points.run(province, district, subdist)
+    if(points != 'error'):
+      vill_points = get_village_points.run(province, district, subdist, village, points, keys[0])
+      path = os.path.join('../GSV',province, district, subdist, village,'original')
+      GSV_loader.run(vill_points, path, keys)

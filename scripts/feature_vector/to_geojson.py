@@ -30,7 +30,7 @@ def run(directory, breeding_sites):
     GeoJSON = {} 
     GeoJSON['type'] = "FeatureCollection" 
     GeoJSON['features'] = []
-    with open(os.path.join(directory,'features_classified.csv'), newline='') as csvfile: 
+    with open(os.path.join(directory,'features_classified.csv')) as csvfile: 
         rows = list(csv.reader(csvfile, delimiter=';', quotechar='|'))   
         for row_x in rows: 
             coor_x = get_coor(row_x[0])
@@ -77,5 +77,5 @@ def run(directory, breeding_sites):
         
         print('----------------------')
         print('converted to geojson')
-        print('unique coordinate:',len(check_coor))
+        print('unique coordinate: '+str(len(check_coor)))
         print('----------------------')

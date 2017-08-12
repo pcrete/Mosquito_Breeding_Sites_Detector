@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from shapely.geometry import Polygon, Point, MultiPolygon, LineString, MultiLineString
 import numpy as np
 import json
@@ -9,20 +12,30 @@ import overpass
 
 multipoly = []
 
+def run(province, district, subdist):
+	polygon = get_polygon(province, district, subdist)
+	if(polygon != 'error'):
+		return extract_coordinates(polygon)
+	return 'error'
+
 def get_polygon(province, district, subdist):
+	# print(province, district, subdist)
 	with open('../geojson/province/'+province+'.geojson') as f:
 		data = json.load(f)
 	print('Imported '+province+'\'s GeoJSON')
 
-	if(district == "เมือง"): district+=province
+	if(district == "เมือง".decode('utf8')): district+=province
 
 	match_feature = []
 	for feature in data['features']:
 		prop = feature['properties']
 		if district==prop['AP_TN'] and subdist==prop['TB_TN']:
+			print('loaded polygon')
 			return Polygon(feature['geometry']['coordinates'][0])
+	print('polygon not loaded')
+	return 'error'
 
-def extract_coordinates(polygon):    
+def extract_coordinates(polygon):
 	data = generate_overpass_script(polygon)
 	print('retrieved roads (linestrngs) from overpass api')
 	multiline = []
@@ -31,8 +44,8 @@ def extract_coordinates(polygon):
 			multiline.append(feature['geometry']['coordinates'])
 	points = linestring_to_coords(multiline)
 	print('linestring: '+str(len(multiline))+' lines')
-	print('total points: '+str(len(points)), 'points')
-	return points        
+	print('total points: '+str(len(points))+'points\n')
+	return points
 
 def generate_overpass_script(polygon):
 	api = overpass.API(timeout=100)

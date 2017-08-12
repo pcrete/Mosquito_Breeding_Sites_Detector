@@ -1,74 +1,117 @@
 # Mosquito Breeding Sites Detector
 
+This project is about detecting Dengue’s vectors breeding site from Google Street View images using deep learning. The main vector is Aedes Egypti mosquito.
+
 ## Table of contents
 
-* Installation
-* How it works
-* How to use
-* Links
+* Pipeline of process
+* Description of Code
+* Directory Structure
+* Getting Started
+    * Prerequisites
+    * Installing
+    * Running
+    * Result
+* Built With
+
+## Pipeline of process
+
+
+## Description of Code
+
+#### All code is in scripts directory.
+
+* `data_collection.py` used for retrieve google street view images of village that you want. The image size is 600x600 pixels.
+
+* `image_recognition.py` used for recognize images , it will return top five classification results.
+
+* `image_segmentation.py` used for extract segmented of image.
+
+* `feature_vector_classification.py` used for classify the result of image recognition and image segmentation again for increasing more accuracy.
+
+## Directory Structure
+
+```
++Mosquito_Breeding_Sites_Detector
+  +SegNet-Tutorial @ fcaf7c4
+  +caffe-segnet @ dba4398
+  +xgboost @ 771a95a
+  +dataset
+    -Inception model evaluation.ipynb	
+    -Training Classifier.ipynb
+    -testing.csv
+    -train_test.csv
+    -training.csv
+    -xgb.model
+  +geojson
+    +province
+    -village.geojson
+  +scripts
+    +feature_vector
+      -feature_vector_classification.ipynb
+      -to_geojson.ipynb
+      -to_geojson.py
+      -xgb_classifier.py
+      -README.md
+    +image_processing
+      +model
+      -__init__.py
+      -image_divider.py
+      -image_recognizer.py
+      -inception.py      
+      -README.md
+    +image_retreival
+      -GSV_loader.py
+      -get_village_points.py
+      -polygon_to_points.py
+      -README.md
+    +segnet
+      +Models
+      -__init__.py
+      -pysegnet.py
+      -README.md
+    -data_collection.py
+    -image_recognition.py
+    -image_segmentation.py
+    -feature_vector_classification.py
+    -README.md
+  +GSV/ชัยนาท/มโนรมย์/ท่าฉนวน/บ้านคลองรุน
+    +divided
+    +original
+    +segmented
+    -brd_sites.js
+    -features.csv
+    -features_classified.csv
+    -visualization.html
+  -README.md
+  -INSTALL.md
+  -RESULT.md
+```
 
 ## Getting Started
 
-## Prerequisites
+These instructions is about how you copy this project up and running on your local machine for development and testing purposes.
 
-## Installing
+### Prerequisites
 
+* Tensorflow
+* Caffe-Segnet
+* Overpass
+* Google street view static image API key
 
-# How it works
-## Pipeline of processes
-![alt text](http://silverpond.com.au/img/blog/pedestrian-detection-details/image03.png "Logo Title Text 1")
+### Installing
 
-## 1. Data Collection
-### Step 1: Convert shape file to geojson file
-Command line to convert .shp to .geojson [link to install](http://www.gdal.org/ogr2ogr.html)
-* input: subdistrict.shp
-* output subdistrict.geojson
+* [Installing](INSTALL.md)
 
-For example, 
-```command
-ogr2ogr -f GeoJSON output.geojson input.shp
-```
+### Running 
+* [Running](scripts/README.md)
 
-### Step 2: Convert subdistrict polygon to points
-* input: subdistrict.geojson
-* output points of subdistrict
+### Result
+* [Example Result](dataset/RESULT.md)
 
+## Built With
 
-### Step 3: Extract village points from subdistrict points
-* input: points of subdistrict
-* output points of village
-
-
-### Step 4: Load Google Street View Image from village points
-* input: points of village
-* output google street view image
-
-## 2. Data Processing
-### Step 1: Classify image
-* input: google street view images
-* output: features (.csv) 
-#### Step 1a: Image Recognition
-* input: google street view images
-* output: top five classification result with confident (.csv) 
-#### Step 1b: Image Segmentation
-* input: google street view images
-* output segmented image
-
-### Step 2: Cascade Classification
-* input: features (.csv)
-* output classificatino result (.csv)
-
-## 3. Data Visualization
-
-### Step 1: Generate geojson from classification result
-* input: classificatino result (.csv)
-* output result geojson (.js)
-
-### Step 2: Visualize on map
-* input: result geojson (.js)
-* output map visualization
-
-# Built With
 * [tensorflow](https://www.tensorflow.org/) - image recognition 
-* caffe-segnet - image segmentation
-* google map - visualization script
+* [caffe-segnet](https://github.com/alexgkendall/caffe-segnet) - image segmentation
+* [overpass](https://github.com/mvexel/overpass-api-python-wrapper) - street geojson
+* [google map](https://developers.google.com/maps/) - street view image and visualization

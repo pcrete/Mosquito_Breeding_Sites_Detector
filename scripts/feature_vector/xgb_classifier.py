@@ -7,11 +7,11 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
 def select_rows(features, breeding_sites, threshold=0.1):
-	print('total:', len(features))
+	print('total: '+str(len(features)))
 	features = features[features['1st_score'] >= threshold]
-	print('after thresh:',len(features))
+	print('after thresh: '+str(len(features)))
 	features = features.loc[features['1st_result'].isin(breeding_sites)]
-	print('features:',len(features))
+	print('after top-1: '+str(len(features)))
 	return features
 
 def add_segment(features):
@@ -59,7 +59,7 @@ def run(directory, breeding_sites):
 	features['cls'] = predicted
 
 	classified = features.loc[features['cls'] == 1]
-	print('classified:', len(classified))
+	print('classified: ' + str(len(classified)))
 
 	classified = classified.drop('cls',axis=1)
 	classified = classified.drop('segment',axis=1)

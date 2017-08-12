@@ -1,6 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from PIL import Image
-from urllib import request
-from urllib import error
+import urllib2
 from io import BytesIO
 from tqdm import tqdm
 import json
@@ -8,13 +10,13 @@ import os
 
 key_index = 0
 
-def load_GSV(vill_points, path, keys):
+def run(vill_points, path, keys):
     if not os.path.exists(path): 
         os.makedirs(path)
 
     for lat, lng in tqdm(vill_points, 'loading GSV'):
         loading(lat, lng, path, keys)
-    print('GSV loaded')
+    print('GSV loaded\n')
 
 def loading(lat, lng, path, keys): 
     global key_index 
@@ -29,7 +31,7 @@ def loading(lat, lng, path, keys):
             key = keys[key_index] 
             baseMetaUrl = "https://maps.googleapis.com/maps/api/streetview/metadata" 
             metaUrl = baseMetaUrl+"?location="+location+"&fov="+fov+"&pitch="+pitch+"&key="+key 
-            requestMeta = request.urlopen(metaUrl)    
+            requestMeta = urllib2.urlopen(metaUrl)    
             metaJson = json.loads(requestMeta.read().decode('utf8')) 
             if metaJson["status"] == 'OK': 
                 for heading in heads:
@@ -37,11 +39,11 @@ def loading(lat, lng, path, keys):
                     coordinate = lat+','+lng
                     baseImgUrl = "https://maps.googleapis.com/maps/api/streetview?size=600x600" 
                     imgUrl = baseImgUrl+"&location="+coordinate+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&key="+key 
-                    requestImg = request.urlopen(imgUrl) 
+                    requestImg = urllib2.urlopen(imgUrl) 
                     image = Image.open(BytesIO(requestImg.read())) 
                     image.save(path +'/'+lat+'_'+lng+'_'+heading+'_'+metaJson["date"]+'.jpg') 
             check = True 
-        except error.HTTPError as e: 
+        except urllib2.HTTPError as e: 
             key_index+=1 
             print('Change Key Index to '+str(key_index)) 
             if key_index>len(keys)-1:  
