@@ -46,7 +46,7 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 * **output:** segmented image
 
 <p align="center">
-<img src="../pic/segnet.png" width="600" style="display: block;  margin: 0 auto;"/>
+<img src="../pic/segnet.png" width="700" style="display: block;  margin: 0 auto;"/>
 </p>
 
 ### Step 1b: Image Recognition
@@ -56,12 +56,12 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 * **output:** top-5 classification results (.csv)
 
 <p align="center">
-<img src="../pic/image_recognition.png" width="720" style="display: block;  margin: 0 auto;"/>
+<img src="../pic/image_recognition.png" width="750" style="display: block;  margin: 0 auto;"/>
 </p>
 
 ### Combined Segmentation and Recognition
 <p align="center">
-<img src="../pic/image_processing.png" width="720" style="display: block;  margin: 0 auto;"/>
+<img src="../pic/image_processing.png" width="800" style="display: block;  margin: 0 auto;"/>
 </p>
 
 ### Step 2: Features Vector Classification
