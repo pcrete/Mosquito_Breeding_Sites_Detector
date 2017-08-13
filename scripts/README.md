@@ -20,7 +20,7 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 `image_retreival/get_village_points.py`
 * **input:** points of subdistrict
 * **output:** points of village
-* 
+
 <p align="center">
 <img src="../pic/overpass_api.png" width="850"  style="display: block;  margin: 0 auto;"/>
 </p>
