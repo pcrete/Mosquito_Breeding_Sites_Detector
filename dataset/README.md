@@ -1,4 +1,4 @@
-# Result 
+# Training model and Evaluation
 
 `Inception model evaluation.ipynb` IPython notebook for evaluating inception model
 
@@ -12,11 +12,15 @@
 
 `xgb.model` classification model
 
-* Example of classification result
+# Results
+
+* Example of classification results
 
 | Image name | 1st result | 1st score | 2nd result | 2nd score | 3rd result | 3rd score | 4th result | 4th score | 5th result | 5th score |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 15.38203756895384-100.1636399994293-120-2013-09-5-Tree | lakeside, lakeshore | 0.2218 | worm fence | 0.110338 | swing | 0.0501 | golf ball| 0.0215 | golfcart, golf cart | 0.0179
+
+## Evaluation of Inception Model (Image Recognition)
 
 * Performance of inception model (All classes)
 
@@ -36,8 +40,9 @@
 | Thresh_size |	2862 | 17 | 21 | 19 | 476 | 961 | 229 | 67 | 95 | 206 | 2471 | 32 |
 | Thresh_acc | 0.5346 | 0.7647 | 0.7143 | 0.5263 | 0.6492 | 0.4412 | 0.8165 | 0.7015 | 0.6526 | 0.7621 | 0.4027 | 0.5938 |
 
-## Classification based on Top-5 results
+## Evaluation of Machine Learning Classifier
 
+### Classification based on Top-5 results
 * Training and Testing set
 
 | | Sample sizes | Yes | No | Ratio |
@@ -52,7 +57,7 @@
 | --- | --- | --- |
 | Accuracy | 0.7666 | 0.5025 |
 
-## Classification based on Top-1 result
+### Classification based on Top-1 result
 
 
 | | Sample sizes |
