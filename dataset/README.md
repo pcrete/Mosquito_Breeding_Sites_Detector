@@ -15,15 +15,15 @@
 * Example of classification result
 
 | Image name | 1st result | 1st score | 2nd result | 2nd score | 3rd result | 3rd score | 4th result | 4th score | 5th result | 5th score |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 15.38203756895384-100.1636399994293-120-2013-09-5-Tree | lakeside, lakeshore | 0.2218 | worm fence | 0.110338 | swing | 0.0501 | golf ball| 0.0215 | golfcart, golf cart | 0.0179 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 15.38203756895384-100.1636399994293-120-2013-09-5-Tree | lakeside, lakeshore | 0.2218 | worm fence | 0.110338 | swing | 0.0501 | golf ball| 0.0215 | golfcart, golf cart | 0.0179
 
 * Performance of inception model (All classes)
 
-| named | Top-1 & thresh=0.30 |	Top-1 & thresh=0.15	| Top-1 |	Top-5 | 
-| --- | --- | --- | --- | --- |  
-| sample size |	3739 | 7456 | 13274 | 60920 |  
-| accuracy | 0.6060444 | 0.5053648 | 0.3836824 | 0.2774458 | 
+| named | Top-5 | Top-1 | Top-1 & thresh=0.15 | Top-1 & thresh=0.30 |
+| --- | --- | --- | --- | --- |
+| sample size |	60920 | 13274 | 7456 | 3739 |
+| accuracy | 0.2774 | 0.3837 |0.5053648 | 0.6060 |
 
 * Performance of inception model (Each class)
 
@@ -42,9 +42,9 @@
 
 | | Sample sizes | Yes | No | Ratio |
 | --- | --- | --- | --- | --- |
-| Dataset | 60,920 | 16,902 | 44,018 | 0.28 |
-| Training set | 50,920 | 11,567 | 38,723 | 0.23 |
-| Testing set | 10,000 | 5,000 | 5,000 | 0.50 |
+| Dataset | 60920 | 16902 | 44018 | 0.28 |
+| Training set | 50920 | 11567 | 38723 | 0.23 |
+| Testing set | 10000 | 5000 | 5000 | 0.50 |
 
 * Classification Performance of XGBoost
 
@@ -57,16 +57,16 @@
 
 | | Sample sizes |
 | --- | --- |
-| Dataset | 60,920 |
-| Select where top-1 score > 0.15 | 32,658 |
-| Select where top-1 = breeding sites | 7,456 |
+| Dataset | 60920 |
+| Select where top-1 score > 0.15 | 32658 |
+| Select where top-1 = breeding sites | 7456 |
 
 * Training and Testing set 
 
 | | Sample sizes | Yes | No | Ratio |
 | --- | --- | --- | --- | --- |
-| Training set | 5,219 | 2,657 | 2,562 | 0.5091 |
-| Testing set | 2,237 | 1,111 | 1,126 | 0.4966 |
+| Training set | 5219 | 2657 | 2,562 | 0.5091 |
+| Testing set | 2237 | 1111 | 1126 | 0.4966 |
 
 * Classification Performance
 
