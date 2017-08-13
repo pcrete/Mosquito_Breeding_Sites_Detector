@@ -65,11 +65,11 @@ This project is about detecting Dengue’s vectors breeding site from Google Str
   -INSTALL.md
 ```
 
-## Getting Started
+## Getting Started <a name="Prerequisites"></a>
 
 These instructions is about how you copy this project up and running on your local machine for development and testing purposes.
 
-#### Prerequisites<a name="Prerequisites"></a>
+#### Prerequisites
 
 * Python 2.7
 * GPU card with CUDA Compute Capability 3.0 or higher [NVIDIA's documentation](https://developer.nvidia.com/cuda-gpus)
