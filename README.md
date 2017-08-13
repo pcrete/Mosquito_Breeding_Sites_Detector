@@ -10,18 +10,19 @@ This project is about detecting Dengue’s vectors breeding site from Google Str
 * Description of Code
 * Directory Structure
 * Getting Started
-    * Prerequisites
-    * Installing
-    * Running
-    * Result
+    * [Prerequisites](#Prerequisites)
+    * [Instalation](INSTALL.md)
+    * [Running](scripts/README.md)
+    * [Evaluating model accuracy](dataset/README.md)
+* [Demo](demo/README.md)
 * Built With
 
 ## Pipeline of process
+![Pipeline of process](pic/pipeline.png)
 
+## Code Description
 
-## Description of Code
-
-#### All code is in scripts directory.
+#### All source codes are in scripts directory.
 
 * `data_collection.py` used for retrieve google street view images of village that you want. The image size is 600x600 pixels.
 
@@ -32,88 +33,68 @@ This project is about detecting Dengue’s vectors breeding site from Google Str
 * `feature_vector_classification.py` used for classify the result of image recognition and image segmentation again for increasing more accuracy.
 
 ## Directory Structure
-
 ```
 +Mosquito_Breeding_Sites_Detector
-  +SegNet-Tutorial @ fcaf7c4
-  +caffe-segnet @ dba4398
-  +xgboost @ 771a95a
+  +SegNet-Tutorial
+  +caffe-segnet
+  +GSV
+  +xgboost
   +dataset
-    -Inception model evaluation.ipynb 
-    -Training Classifier.ipynb
-    -testing.csv
-    -train_test.csv
-    -training.csv
-    -xgb.model
   +geojson
-    +province
-    -village.geojson
   +scripts
     +feature_vector
-      -feature_vector_classification.ipynb
-      -to_geojson.ipynb
       -to_geojson.py
       -xgb_classifier.py
-      -README.md
     +image_processing
       +model
-      -__init__.py
       -image_divider.py
       -image_recognizer.py
-      -inception.py      
-      -README.md
+      -inception.py
     +image_retreival
       -GSV_loader.py
       -get_village_points.py
       -polygon_to_points.py
-      -README.md
     +segnet
       +Models
-      -__init__.py
       -pysegnet.py
-      -README.md
     -data_collection.py
     -image_recognition.py
     -image_segmentation.py
     -feature_vector_classification.py
-    -README.md
-  +GSV/ชัยนาท/มโนรมย์/ท่าฉนวน/บ้านคลองรุน
-    +divided
-    +original
-    +segmented
-    -brd_sites.js
-    -features.csv
-    -features_classified.csv
-    -visualization.html
   -README.md
   -INSTALL.md
-  -RESULT.md
 ```
 
 ## Getting Started
 
 These instructions is about how you copy this project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+#### Prerequisites<a name="Prerequisites"></a>
 
-* Tensorflow
-* Caffe-Segnet
-* Overpass
-* Google street view static image API key
+* Python 2.7
+* GPU card with CUDA Compute Capability 3.0 or higher [NVIDIA's documentation](https://developer.nvidia.com/cuda-gpus)
+* [Install CUDA Toolkit 8.0](https://developer.nvidia.com/cuda-downloads)
+* [Download cuDNN v5.1](https://developer.nvidia.com/cudnn)
+* [Install TensorFlow with GPU](https://www.tensorflow.org/install/)
+* [Install Caffe-Segnet with GPU](https://github.com/alexgkendall/caffe-segnet), caffe Installation ins [here](http://caffe.berkeleyvision.org/installation.html)
 
-### Installing
+#### Installing
 
-* [Installing](INSTALL.md)
+* see [Instalation instruction](INSTALL.md)
 
-### Running 
-* [Running](scripts/README.md)
+#### Running
+* see [Running instruction](scripts/README.md)
 
-### Result
-* [Example Result](RESULT.md)
+#### Evaluating model accuracy
+* see [Training model and Evaluation](dataset/README.md)
+
+## Demo
+* see [Demo](demo/README.md)
 
 ## Built With
 
-* [tensorflow](https://www.tensorflow.org/) - image recognition 
-* [caffe-segnet](https://github.com/alexgkendall/caffe-segnet) - image segmentation
-* [overpass](https://github.com/mvexel/overpass-api-python-wrapper) - street geojson
-* [google map](https://developers.google.com/maps/) - street view image and visualization
+* [TensorFlow](https://github.com/tensorflow/models) - Image Recognition
+* [Caffe-Segnet](https://github.com/alexgkendall/caffe-segnet) - Image Segmentation
+* [XGBoost](https://github.com/dmlc/xgboost) - Feature Vector Classifier
+* [Overpass API](https://github.com/mvexel/overpass-api-python-wrapper) - Road/Street Geojson
+* [Google Map API](https://developers.google.com/maps/) - Street View Image and Visualization
