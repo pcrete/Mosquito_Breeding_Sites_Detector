@@ -20,16 +20,19 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 `image_retreival/get_village_points.py`
 * **input:** points of subdistrict
 * **output:** points of village
-
+* 
+<p align="center">
 <img src="../pic/overpass_api.png" width="850"  style="display: block;  margin: 0 auto;"/>
+</p>
 
 ### Step 3: Load Google Street View Image from village points
 `image_retreival/GSV_loader.py`
 * **input:** points of village
 * **output:** street view images
 
-
+<p align="center">
 <img src="../pic/GSV.png" width="800" style="display: block;  margin: 0 auto;"/>
+</p>
 
 ## 2. Data Processing
 ### Step 1: Classify image
@@ -42,8 +45,9 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 * **input:** google street view images
 * **output:** segmented image
 
+<p align="center">
 <img src="../pic/segnet.png" width="600" style="display: block;  margin: 0 auto;"/>
-
+</p>
 
 ### Step 1b: Image Recognition
 `image_recognition.py`
@@ -51,10 +55,14 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 * **input:** street view and segmented images
 * **output:** top-5 classification results (.csv)
 
+<p align="center">
 <img src="../pic/image_recognition.png" width="720" style="display: block;  margin: 0 auto;"/>
+</p>
 
 ### Combined Segmentation and Recognition
+<p align="center">
 <img src="../pic/image_processing.png" width="720" style="display: block;  margin: 0 auto;"/>
+</p>
 
 ### Step 2: Features Vector Classification
 * **input:** features (.csv)
@@ -81,8 +89,9 @@ ogr2ogr -f GeoJSON output.geojson input.shp
 * **input:** geojson (.js)
 * **output:** map visualization
 
+<p align="center">
 <img src="../pic/visualization.png" style="width: 1000; display: block;  margin: 0 auto;"/>
-
+</p>
 
 
 # How to run
