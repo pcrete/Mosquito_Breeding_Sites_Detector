@@ -1,4 +1,4 @@
-# Mosquito Breeding Sites Detector
+# Mosquito Breeding Sites Detector (Deprecated)
 
 [![Build Status](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector.svg?branch=master)](https://travis-ci.org/pcrete/Mosquito_Breeding_Sites_Detector) [![Gitter chat for developers at https://gitter.im/dmlc/xgboost](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Mosquito_Breeding_Sites_Detector/Lobby)
 
